@@ -16,13 +16,25 @@ extern __declspec(dllexport) int startcapture(int fmt);
 extern __declspec(dllexport) int stopcapture();
 void ProcessCapturedBytes();
 
-//Audio Only Capture To File
-extern __declspec(dllexport) int startcaptureaudio(char* filename);
+//Audio Only Capture To Callback
+extern __declspec(dllexport) int setcapturecallbackaudio(data_callback aCallback);
+extern __declspec(dllexport) int freecaptureaudiocallback();
+extern __declspec(dllexport) int startcaptureaudio();
 extern __declspec(dllexport) int stopcaptureaudio();
 
-//Video Only Capture To File
-extern __declspec(dllexport) int startcapturevideo(char* filename);
+//Audio Only Capture To File
+extern __declspec(dllexport) int startfilecaptureaudio(char* filename);
+extern __declspec(dllexport) int stopfilecaptureaudio();
+
+//Video Only Capture To Callback
+extern __declspec(dllexport) int setcapturecallbackvideo(data_callback aCallback);
+extern __declspec(dllexport) int freecapturevideocallback();
+extern __declspec(dllexport) int startcapturevideo();
 extern __declspec(dllexport) int stopcapturevideo();
+
+//Video Only Capture To File
+extern __declspec(dllexport) int startfilecapturevideo(char* filename);
+extern __declspec(dllexport) int stopfilecapturevideo();
 
 
 
