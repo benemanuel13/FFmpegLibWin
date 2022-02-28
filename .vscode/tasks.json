@@ -7,7 +7,7 @@
 			"command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
 			"args": [
 				"-fdiagnostics-color=always",
-				"-IC:/msys64/usr/local/include",
+				"-I./include",
 				"-Wall",
 				"-g",
 				"-lpthread",
@@ -36,7 +36,7 @@
 				"-shared",
 				"-fpic",
 				"${fileBasenameNoExtension}.o",
-				"-LC:/msys64/usr/local/lib",
+				"-L./lib",
 				"-lavdevice",
 				"-lpsapi",
 				"-lstrmiids",
