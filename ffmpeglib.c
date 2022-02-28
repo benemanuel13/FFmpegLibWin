@@ -38,6 +38,7 @@ extern __declspec(dllexport) void SetByteCallback(bytes_callback aCallback)
 
 //---------------------------------------------------------------------------------------
 
+//Audio / Video Conversion
 extern __declspec(dllexport) int audioconvert(char* infilename, char* outfilename)
 {
     return -1;
@@ -48,8 +49,10 @@ extern __declspec(dllexport) int videoconvert(char* infilename, char* outfilenam
     return -1;
 }
 
+//Byte Array Callback used for all Audio/Video captures
 data_callback capD;
 
+//Video and Audio Capture To Callback
 extern __declspec(dllexport) int setcapturecallback(data_callback aCallback)
 {
     capD = aCallback;
@@ -83,6 +86,7 @@ void ProcessCapturedBytes()
      capD(bytes, 5, 1);
 }
 
+//Video and Audio Capture To File
 extern __declspec(dllexport) int startfilecapture(char* filename)
 {
     return -1;
@@ -93,6 +97,7 @@ extern __declspec(dllexport) int stopfilecapture()
     return -1;
 }
 
+//Audio Only Capture To Callback
 extern __declspec(dllexport) int setcapturecallbackaudio(data_callback aCallback)
 {
     capD = aCallback;
@@ -107,7 +112,7 @@ extern __declspec(dllexport) int freecaptureaudiocallback()
     return -1;
 }
 
-extern __declspec(dllexport) int startcaptureaudio(char* filename)
+extern __declspec(dllexport) int startcaptureaudio()
 {
     return -1;
 }
@@ -117,6 +122,7 @@ extern __declspec(dllexport) int stopcaptureaudio()
     return -1;
 }
 
+//Audio Only Capture To File
 extern __declspec(dllexport) int startfilecaptureaudio(char* filename)
 {
     return -1;
@@ -127,6 +133,7 @@ extern __declspec(dllexport) int stopfilecaptureaudio()
     return -1;
 }
 
+//Video Only Capture To Callback
 extern __declspec(dllexport) int setcapturecallbackvideo(data_callback aCallback)
 {
     capD = aCallback;
@@ -151,6 +158,7 @@ extern __declspec(dllexport) int stopcapturevideo()
     return -1;
 }
 
+//Video Only Capture To File
 extern __declspec(dllexport) int startfilecapturevideo(char* filename)
 {
     return -1;
