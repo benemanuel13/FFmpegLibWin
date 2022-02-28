@@ -151,7 +151,7 @@ extern __declspec(dllexport) int stopcapturevideo()
     return -1;
 }
 
-extern __declspec(dllexport) int startfilecapturevideo()
+extern __declspec(dllexport) int startfilecapturevideo(char* filename)
 {
     return -1;
 }
